@@ -1,0 +1,144 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: cornflowerblue;
+}
+
+.menu-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    cursor: pointer;
+}
+
+.menu-bar {
+    width: 40px;
+    height: 5px;
+    background: #fff;
+    border-radius: 10px;
+    margin-bottom: 8px;
+    transition: 0.5s;
+}
+
+.text {
+    font-family: 'Arial Round', sans-serif;
+    color: #fff;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 11px;
+    letter-spacing: 2.8px;
+    transition: 1s;
+}
+
+.upper-bar-clicked {
+    width: 50px;
+    transform: rotate(45deg) translate(10px, 15px);
+}
+
+.lower-bar-clicked {
+    width: 50px;
+    transform: rotate(-45deg) translate(-6px, 2px);
+}
+
+.text-clicked {
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s linear 0.20s, opacity 0.20s linear;
+}
+
+.upper-bar-clicked {
+    animation: animate-upper-bar 1s ease-out;
+}
+
+@keyframes animate-upper-bar {
+
+    0%,
+    100% {
+        margin-top: 0px;
+    }
+
+    25% {
+        margin-top: -8px;
+    }
+
+    50% {
+        margin-top: 6px;
+    }
+
+    75% {
+        margin-top: -4px;
+    }
+}
+
+/* after cross */
+
+.after-cross-upper-bar {
+    animation: upper-bar-reverse 1s ease-out;
+}
+
+@keyframes upper-bar-reverse {
+    0% {
+        transform: rotate(45deg) translate(10px, 15px);
+        margin-top: 0px;
+        width: 40px;
+    }
+
+    25% {
+        transform: rotate(-10deg) translate(1px, -2px);
+        margin-top: -8px;
+        width: 37px;
+    }
+
+    50% {
+        transform: rotate(10deg) translate(0px, 4px);
+        margin-top: 6px;
+        width: 40px;
+    }
+
+    75% {
+        transform: rotate(-5deg) translate(0px, -1px);
+        margin-top: -4px;
+        width: 40px;
+    }
+
+    100% {
+        transform: rotate(0deg);
+        margin-top: 0px;
+        width: 40px;
+    }
+}
+
+.after-cross-lower-bar {
+    animation: lower-bar-reverse 1s ease-out;
+}
+
+@keyframes lower-bar-reverse {
+    0% {
+        transform: rotate(-45deg) translate(-6px, 2px);
+        width: 40px;
+    }
+
+    25% {
+        transform: rotate(10deg) translate(-1px, -4px);
+        width: 40px;
+    }
+
+    50% {
+        transform: rotate(-10deg) translate(0px, 2px);
+        width: 40px;
+    }
+
+    75% {
+        transform: rotate(5deg) translate(0px, -3px);
+        width: 40px;
+    }
+
+    100% {
+        transform: rotate(0deg);
+        width: 40px;
+    }
+}
